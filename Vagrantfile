@@ -44,9 +44,10 @@ Vagrant.configure(2) do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
+    # VirtualBox name for the resulting VM instance
+    vb.name = "Kleer Agile Development"
     # Display the VirtualBox GUI when booting the machine
-    # vb.gui = true
-
+    vb.gui = true
     # Customize the amount of memory on the VM:
     vb.memory = "1024"
   end
@@ -67,7 +68,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
 
     # Install curl
-    sudo apt-get -Y install curl
+    sudo apt-get -y install curl
 
     # Install RVM
     gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -78,11 +79,12 @@ Vagrant.configure(2) do |config|
     rvm install ruby
 
     # Install GIT
-    sudo apt-get -Y install git
+    sudo apt-get -y install git
 
     # Install AtomEditor
-    sudo add-apt-repository ppa:webupd8team/atom
-    sudo apt-get update
-    sudo apt-get -Y install atom
+    sudo apt-get -y install software-properties-common
+    sudo add-apt-repository -y ppa:webupd8team/atom
+    sudo apt-get -y update
+    sudo apt-get -y install atom
   SHELL
 end
