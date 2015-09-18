@@ -67,6 +67,15 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
 
+    # Install GIT
+    sudo apt-get -y install git
+    # Create CSD folder
+    cd ~
+    mkdir CSD
+    cd CSD
+    # Clone Kleer Agile Development repo
+
+
     # Install curl
     sudo apt-get -y install curl
 
@@ -77,9 +86,6 @@ Vagrant.configure(2) do |config|
     # Install latest Ruby
     source ~/.rvm/scripts/rvm
     rvm install ruby
-
-    # Install GIT
-    sudo apt-get -y install git
 
     # Install AtomEditor
     sudo apt-get -y install software-properties-common
