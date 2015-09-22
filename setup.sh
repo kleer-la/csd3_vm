@@ -52,5 +52,5 @@ cd ..
 
 echo -e \n\n =========================== Creating CSD folders ================================
 cd ~
-mkdir CSD
-cd CSD
+mkdir csd
+cd csd
