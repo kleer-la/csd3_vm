@@ -42,14 +42,14 @@ wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war
 java -jar jenkins.war &
 
 # Install plugins
-targetUrl=http://localhost:8080/
-wget ${targetUrl}jnlpJars/jenkins-cli.jar
-java -jar jenkins-cli.jar -s ${targetUrl} install-plugin git github greenballs
-java -jar jenkins-cli.jar -s ${targetUrl} restart
-
-# Shutdown Jenkins
-java -jar jenkins-cli.jar -s ${targetUrl} shutdown
-cd ..
+# targetUrl=http://localhost:8080/
+# wget ${targetUrl}jnlpJars/jenkins-cli.jar
+# java -jar jenkins-cli.jar -s ${targetUrl} install-plugin git github greenballs
+# java -jar jenkins-cli.jar -s ${targetUrl} restart
+#
+# # Shutdown Jenkins
+# java -jar jenkins-cli.jar -s ${targetUrl} shutdown
+# cd ..
 
 echo
 echo ======================== Creating CSD folders =============================
