@@ -79,7 +79,7 @@ Vagrant.configure(2) do |config|
 
     echo ================= Cloning Kleer Agile Development repo ====================
     echo
-    git clone git@github.com:kleer-la/csd3_vm.git
+    git clone https://github.com/kleer-la/csd3_vm.git
     echo ===========================================================================
     echo .
 
