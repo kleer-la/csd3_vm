@@ -12,7 +12,7 @@ sudo apt-get -y install curl
 
 echo
 echo ========================== Installing Java ================================
-sudo apt-get -y install defaut-jre
+sudo apt-get -y install default-jre
 
 echo
 echo =========================== Installing RVM ================================
@@ -44,7 +44,7 @@ java -jar jenkins.war &
 # Install plugins
 targetUrl=http://localhost:8080/
 wget ${targetUrl}jnlpJars/jenkins-cli.jar
-java -jar jenkins-cli.jar -s ${targetUrl} install-plugin subversion git github greenballs
+java -jar jenkins-cli.jar -s ${targetUrl} install-plugin git github greenballs
 java -jar jenkins-cli.jar -s ${targetUrl} restart
 
 # Shutdown Jenkins
@@ -56,3 +56,8 @@ echo ======================== Creating CSD folders =============================
 cd ~
 mkdir csd
 cd csd
+
+echo
+echo ===================== Cloning Ruby Sinatra Template========================
+cd ~/csd
+git clone https://github.com/kleer-la/template-ruby-sinatra.git template
