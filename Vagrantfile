@@ -67,18 +67,21 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
 
-    # Install GIT
-    echo ========================== Installing GIT =================================
-    echo sudo apt-get -y install git
+    echo ========================= Updating Aptitude ===============================
+    sudo apt-get -y update
+    echo ===========================================================================
+    echo .
 
+    echo ========================== Installing GIT =================================
     sudo apt-get -y install git
     echo ===========================================================================
+    echo .
 
-    # Clone Kleer Agile Development repo
-    echo ========================== Installing GIT =================================
-    echo git clone git@github.com:kleer-la/csd3_vm.git
+    echo ================= Cloning Kleer Agile Development repo ====================
+    echo
     git clone git@github.com:kleer-la/csd3_vm.git
     echo ===========================================================================
+    echo .
 
   SHELL
 end
