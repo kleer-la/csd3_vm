@@ -2,7 +2,15 @@ clear
 echo    =====================================================================
 echo                  Kleer Agile Development virtual machine setup
 echo    =====================================================================
+
 echo
+echo =========================== ES Keyboard ===================================
+echo '@setxkbmap -option grp:alt_shift_toggle "es, us"' | sudo tee -a /etc/xdg/lxsession/Lubuntu/autostart
+
+echo
+echo =========================== ES KEyboard ===================================
+echo "export PS1='\w\$ '" >> ~/.bashrc
+
 echo ========================== Installing GIT =================================
 sudo apt-get -y install git
 
@@ -49,7 +57,7 @@ cd jenkins
 wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war
 
 # Start
-java -jar jenkins.war &
+# java -jar jenkins.war &
 
 # Install plugins
 # targetUrl=http://localhost:8080/
